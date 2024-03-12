@@ -3,24 +3,38 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 
   .logo-container {
-    height: 100%;
-    width: 70px;
     padding: 25px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-links-container {
     width: 50%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-top: 8px;
+    margin-right: 30px;
+    gap: 10px;
 
     .nav-link {
       padding: 10px 15px;
       cursor: pointer;
+      --c: linear-gradient(#000 0 0);
+      padding-bottom: 0.15em;
+      background: var(--c), var(--c);
+      background-size: 0.3em 0.1em;
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      transition: 0.3s linear, background-size 0.3s 0.2s linear;
+    }
+
+    .nav-link:hover {
+      background-size: 50% 0.1em;
+      background-position: 10% 100%, 90% 100%;
     }
   }
 }
