@@ -7,6 +7,7 @@ import FormInput from '../form-input/form-input.component';
 import './sign-in-form.styles.scss';
 import {
   createUserDocumentFromAuth,
+  signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
 
@@ -32,8 +33,24 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
       resetFormFields();
-    } catch (error) {}
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/user-not-found':
+          alert('Usuário não encontrado');
+          break;
+        case 'auth/wrong-password':
+          alert('Senha incorreta');
+          break;
+        default:
+          console.error('Error creating user', error.message);
+      }
+    }
   };
 
   const handleChange = (event) => {
@@ -51,6 +68,7 @@ const SignInForm = () => {
           name="email"
           value={email}
           onChange={handleChange}
+          required
         />
         <FormInput
           label="Senha"
@@ -58,10 +76,16 @@ const SignInForm = () => {
           type="password"
           value={password}
           onChange={handleChange}
+          required
         />
         <div className="buttons-container">
           <Button type="submit">Cadastrar</Button>
-          <Button buttonType="google" onClick={signInWithGoogle}>
+          <Button
+            type="button"
+            buttonType="google"
+            onClick={signInWithGoogle}
+            iconType="logos:google-icon"
+          >
             Entrar com o Google
           </Button>
         </div>
