@@ -1,18 +1,17 @@
-import Button from '../button/button.component';
 import './product-card.styles.scss';
 
+import Button from '../button/button.component';
+
 const ProductCard = ({ product }) => {
-  const { name, imageUrl, price } = product;
+  const { name, price, imageUrl } = product;
   return (
-    <div className="product-card-conatianer">
+    <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
       <div className="footer">
         <span className="name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <Button onClick={() => alert('Added to cart')} buttonType="inverted">
-        Adicionar ao carrinho
-      </Button>
+      <Button buttonType="inverted">Adicionar ao carrinho</Button>
     </div>
   );
 };
