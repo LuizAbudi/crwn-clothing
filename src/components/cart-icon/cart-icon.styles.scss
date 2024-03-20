@@ -30,4 +30,10 @@
   .count {
     font-size: 12px;
   }
+
+  @media screen and (max-width: 620px) {
+    .item-count {
+      right: 3px;
+    }
+  }
 }
