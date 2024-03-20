@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
       0
     );
     setCartCount(newCartCount);
-  }, [cartItems, cartCount]);
+  }, [cartItems]);
 
   useEffect(() => {
     const newCartTotal = cartItems.reduce(
