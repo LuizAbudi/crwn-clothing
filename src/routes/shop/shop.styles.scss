@@ -3,4 +3,16 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
   row-gap: 50px;
+
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 980px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
 }
