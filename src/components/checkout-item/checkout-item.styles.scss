@@ -38,4 +38,11 @@
     padding-left: 12px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 650px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 12px;
+  }
 }
