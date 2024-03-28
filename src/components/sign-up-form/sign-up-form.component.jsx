@@ -18,6 +18,7 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formrFields, setFormFields] = useState(defaultFormFields);
   const { name, email, password, confirmPassword } = formrFields;
+  const [messageRegister, setMessageRegister] = useState(false);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -39,6 +40,7 @@ const SignUpForm = () => {
 
       createUserDocumentFromAuth(user, { displayName: name });
       resetFormFields();
+      setMessageRegister(true);
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('O email já está em uso');
@@ -85,6 +87,13 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
         <Button type="submit">Cadastrar</Button>
+        {messageRegister ? (
+          <div className="message-register-container">
+            <span>
+              Usuário cadastrado com sucesso! Faça login para acessar.
+            </span>
+          </div>
+        ) : null}
       </form>
     </div>
   );
