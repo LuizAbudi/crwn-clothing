@@ -4,20 +4,20 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
-        name: 'Brown Brim **EXAMPLE**',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        name: '**EXAMPLE**',
+        imageUrl: 'https://i.ibb.co/RCrrW43/jordan-rise-cap-adjustable-hat-2fs-SH0.jpg',
         price: 25,
       },
       {
         id: 2,
-        name: 'Blue Beanie **EXAMPLE**',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+        name: '**EXAMPLE**',
+        imageUrl: 'https://i.ibb.co/qgjFqCc/pexels-riley-franzke-1822845.jpg',
         price: 18,
       },
       {
         id: 3,
-        name: 'Brown Cowboy **EXAMPLE**',
-        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+        name: '**EXAMPLE**',
+        imageUrl: 'https://i.ibb.co/HVd28Mp/180-bone-grizzly-5panel-og-script-camper-hat-black-rb01-7541-1-da62f204d7fb995ea64f656bb6ff3b6b.webp',
         price: 35,
       },
     ],
